@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "LetsGoooComposables"
-include ':app'
+include ':library'
