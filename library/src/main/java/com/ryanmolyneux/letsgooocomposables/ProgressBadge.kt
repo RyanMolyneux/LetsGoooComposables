@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.*
 @Composable
 fun ProgressBadge(currentProgress: Float,
                   badgeColour: Color,
-                  completionBadge: ImageVector,
+                  completionBadge: ImageVector = DEFAULT_NO_COMPLETION_BADGE,
                   badgeSizeDp: Dp,
                   progressChangeAnimationDurationMillis: Int = 1000) {
     val animatedProgress by animateFloatAsState(
@@ -40,12 +40,12 @@ fun ProgressBadge(currentProgress: Float,
     )
 
     Box(modifier = Modifier.size(badgeSizeDp)) {
-        if (animatedProgress >= 100) {
+        if (animatedProgress >= 100 && completionBadge != DEFAULT_NO_COMPLETION_BADGE) {
             Image(completionBadge, null,
                 Modifier
                     .size(badgeSizeDp)
                     .clip(CircleShape))
-        } else if (animatedProgress >= 0 && animatedProgress < 100) {
+        } else if (animatedProgress  >= 0 && animatedProgress <= 100) {
             CircularProgressIndicator(
                 progress = (animatedProgress / 100f),
                 modifier = Modifier.size(badgeSizeDp),
@@ -62,6 +62,8 @@ fun ProgressBadge(currentProgress: Float,
         }
     }
 }
+
+private val DEFAULT_NO_COMPLETION_BADGE = ImageVector.Builder(name = "DEFAULT_NO_COMPLETION_BADGE", 0.dp, 0.dp, 0f,0f).build()
 
 @Preview
 @Composable
