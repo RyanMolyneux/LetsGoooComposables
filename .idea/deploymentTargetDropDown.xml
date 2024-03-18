@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="HistogramCategoricalMisspelledRatPreview">
+        <State />
+      </entry>
+      <entry key="HistogramCategoricalPreview">
+        <State />
+      </entry>
+      <entry key="HistogramNumericalPreview">
+        <State />
+      </entry>
+      <entry key="HistogramNumericalSmallPreview">
+        <State />
+      </entry>
+      <entry key="HistogramNumericalXLabelPreview">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>
