@@ -33,7 +33,7 @@ fun BoxAndWhiskersPlot(q1: Float,
                        q3: Float,
                        upperBounds: Float,
                        lowerBounds: Float,
-                       stepSize: Float = 0.5f,
+                       stepSize: Float = 1f,
                        lineColour: Color = Color.Black,
                        boxColor: Color = Color.Blue) {
     val textMeasurer = rememberTextMeasurer()
