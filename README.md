@@ -2,6 +2,7 @@
 This repository is full of jetpack composables that I created.
 
 ## Composables
-- Histogram added as of Version 3.0.
+- BoxAndWhiskersPlot added as of version 3.0.1
+- Histogram added as of version 3.0.
 - DottedHeadingsHorizontalScroller.
 - ProgressBadge.
