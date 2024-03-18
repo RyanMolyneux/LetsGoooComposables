@@ -97,12 +97,12 @@ fun BoxAndWhiskersPlot(q1: Float,
 
 @Preview
 @Composable
-fun BoxAndWhiskersPreview() {
+internal fun BoxAndWhiskersPreview() {
     BoxAndWhiskersPlot(q1 = 1f, q2 = 2f, q3 = 3f, upperBounds = 5f, lowerBounds = 0f, boxColor = Color.Cyan)
 }
 
 @Preview
 @Composable
-fun BoxAndWhiskersMinusPreview() {
+internal fun BoxAndWhiskersMinusPreview() {
     BoxAndWhiskersPlot(q1 = -1f, q2 = -2f, q3 = -3f, upperBounds = 0f, lowerBounds = -5f)
 }

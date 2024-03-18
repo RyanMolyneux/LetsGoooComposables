@@ -203,7 +203,7 @@ fun Histogram(dataType: DataType) {
 }
 
 
-fun List<Double>.findSmallest(): Double? {
+internal fun List<Double>.findSmallest(): Double? {
     var currentSmallest: Double? = null
 
     for (entry in this) {
@@ -217,7 +217,7 @@ fun List<Double>.findSmallest(): Double? {
     return currentSmallest
 }
 
-fun List<Double>.findBiggest(): Double? {
+internal fun List<Double>.findBiggest(): Double? {
     var currentBiggest: Double? = null
 
     for (entry in this) {
@@ -231,7 +231,7 @@ fun List<Double>.findBiggest(): Double? {
     return currentBiggest
 }
 
-fun List<Double>.countAllBetween(greaterThanOrEqualTo: Double, lessThan: Double): Long {
+internal fun List<Double>.countAllBetween(greaterThanOrEqualTo: Double, lessThan: Double): Long {
     var count = 0L
     for (entry in this) {
         if (entry >= greaterThanOrEqualTo && entry < lessThan) {
@@ -243,7 +243,7 @@ fun List<Double>.countAllBetween(greaterThanOrEqualTo: Double, lessThan: Double)
 
 @Preview
 @Composable
-fun HistogramCategoricalPreview() {
+internal fun HistogramCategoricalPreview() {
     Histogram(
         dataType = DataType.Categorical(
             listOf(
@@ -265,7 +265,7 @@ fun HistogramCategoricalPreview() {
 
 @Preview
 @Composable
-fun HistogramCategoricalMisspelledRatPreview() {
+internal fun HistogramCategoricalMisspelledRatPreview() {
     Histogram(
         dataType = DataType.Categorical(
             listOf(
@@ -287,7 +287,7 @@ fun HistogramCategoricalMisspelledRatPreview() {
 
 @Preview
 @Composable
-fun HistogramNumericalSmallPreview() {
+internal fun HistogramNumericalSmallPreview() {
     Histogram(
         dataType = DataType.Numerical(
             data = listOf(
@@ -306,7 +306,7 @@ fun HistogramNumericalSmallPreview() {
 
 @Preview
 @Composable
-fun HistogramNumericalPreview() {
+internal fun HistogramNumericalPreview() {
     Histogram(
         dataType = DataType.Numerical(
             data = listOf(
