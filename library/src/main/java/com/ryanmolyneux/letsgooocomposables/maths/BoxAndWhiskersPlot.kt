@@ -78,9 +78,9 @@ fun BoxAndWhiskersPlot(q1: Float,
         fun drawBox() {
             fun calculateQXCoordinate(qValue: Float): Float {
                 return if (upperAndLowerPositive) {
-                    lineStart + (lineRange * abs(qValue / range))
+                    lineStart + (lineRange * abs((qValue-lowerBounds) / range))
                 } else {
-                    lineEnd - (lineRange * abs(qValue / range))
+                    lineEnd - (lineRange * abs( (qValue-abs(upperBounds)) / range))
                 }
             }
             val q1XCoordinate = calculateQXCoordinate(q1)
@@ -103,6 +103,18 @@ internal fun BoxAndWhiskersPreview() {
 
 @Preview
 @Composable
+internal fun BoxAndWhiskersLargeRangePreview() {
+    BoxAndWhiskersPlot(q1 = 4.0f, q2 = 10.0f, q3 = 20.0f, upperBounds = 20f, lowerBounds = 2f)
+}
+
+@Preview
+@Composable
 internal fun BoxAndWhiskersMinusPreview() {
-    BoxAndWhiskersPlot(q1 = -1f, q2 = -2f, q3 = -3f, upperBounds = 0f, lowerBounds = -5f)
+    BoxAndWhiskersPlot(q1 = -5f, q2 = -2f, q3 = -1f, upperBounds = 1f, lowerBounds = -6f)
+}
+
+@Preview
+@Composable
+internal fun BoxAndWhiskersMinusLargRangePreview() {
+    BoxAndWhiskersPlot(q1 = -12f, q2 = -9f, q3 = -1f, upperBounds = 10f, lowerBounds = -17f, stepSize = 2f)
 }
