@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-def letsGoooComposablesVersion = "3.0.2"
+def letsGoooComposablesVersion = "3.0.3"
 
 android {
     compileSdk 34
