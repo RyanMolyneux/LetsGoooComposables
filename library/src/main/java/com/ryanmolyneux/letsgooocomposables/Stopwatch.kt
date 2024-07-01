@@ -247,7 +247,7 @@ private fun getTimeBetween(startTime: Instant, endTime: Instant): TimeElapsed {
  * your number to stay in string form, prefixing it with zeros when it falls
  * below said length.
  */
-fun Long.zeroPrefixedString(numStrLength: Long = 2): String {
+private fun Long.zeroPrefixedString(numStrLength: Long = 2): String {
     var numOfZerosToPrefix = numStrLength - this.toString().length
     var resultingString = ""
 
@@ -261,7 +261,7 @@ fun Long.zeroPrefixedString(numStrLength: Long = 2): String {
     return resultingString
 }
 
-data class TimeElapsed(
+private data class TimeElapsed(
     val days: Long,
     val hours: Long,
     val minutes: Long,
@@ -277,7 +277,7 @@ sealed class LapState() {
 
 @Preview
 @Composable
-fun StopwatchPreview() {
+private fun StopwatchPreview() {
     Surface(modifier = Modifier.padding(16.dp)) {
         Column(modifier = Modifier.padding(16.dp)) {
             Stopwatch("Testing", "Test reason", LapState.Prepped)
